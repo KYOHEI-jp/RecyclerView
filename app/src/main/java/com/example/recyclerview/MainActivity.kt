@@ -3,6 +3,7 @@ package com.example.recyclerview
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -21,7 +22,8 @@ class MainActivity : AppCompatActivity() {
 
         )
 
-        Log.d("MainActivity", movieList.toString())
+        val recyclerAdapter = RecyclerAdapter(movieList)
+        recyclerView.adapter = recyclerAdapter
 
     }
 }

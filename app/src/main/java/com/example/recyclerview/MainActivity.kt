@@ -3,6 +3,7 @@ package com.example.recyclerview
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import androidx.recyclerview.widget.DividerItemDecoration
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -23,7 +24,14 @@ class MainActivity : AppCompatActivity() {
         )
 
         val recyclerAdapter = RecyclerAdapter(movieList)
-        recyclerView.adapter = recyclerAdapter
+//        recyclerView.adapter = recyclerAdapter
+//        recyclerView.addItemDecoration(DividerItemDecoration(this, DividerItemDecoration.VERTICAL))
+//        recyclerView.setHasFixedSize(true)
+        recyclerView.apply {
+            adapter = recyclerAdapter
+            addItemDecoration(DividerItemDecoration(this@MainActivity, DividerItemDecoration.VERTICAL))
+            setHasFixedSize(true)
+        }
 
     }
 }
